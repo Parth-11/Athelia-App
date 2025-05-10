@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:athelia/screens/home/homepage.dart';
+import 'package:athelia/screens/hub/hub_page.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
@@ -16,7 +17,7 @@ class _NavbarState extends State<Navbar> {
     });
   }
 
-  static const List<Widget> _pages = [Homepage()];
+  static const List<Widget> _pages = [Homepage(), HubPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,13 @@ class _NavbarState extends State<Navbar> {
         body: _pages.elementAt(_index),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _index,
-          items: [BottomNavigationBarItem(icon: const Icon(Icons.home))],
+          items: [
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.home),
+              label: 'home',
+            ),
+            BottomNavigationBarItem(icon: const Icon(Icons.hub), label: 'hub'),
+          ],
           onTap: _pageNavigation,
         ),
       ),
