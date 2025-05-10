@@ -1,3 +1,4 @@
+import 'package:athelia/screens/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:athelia/screens/home/home_page.dart';
 import 'package:athelia/screens/hub/hub_page.dart';
@@ -17,7 +18,7 @@ class _NavbarState extends State<Navbar> {
     });
   }
 
-  static final List<Widget> _pages = [HomePage(), HubPage()];
+  static final List<Widget> _pages = [HomePage(), HubPage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,10 @@ class _NavbarState extends State<Navbar> {
               label: 'Home',
             ),
             BottomNavigationBarItem(icon: const Icon(Icons.hub), label: 'Hub'),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.person),
+              label: 'Profile',
+            ),
           ],
           onTap: _pageNavigation,
         ),
