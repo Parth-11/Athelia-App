@@ -1,5 +1,6 @@
 import 'package:athelia/screens/profile/lists.dart';
 import 'package:athelia/screens/profile/stats.dart';
+import 'package:athelia/widgets/profile/custom_button.dart';
 import 'package:athelia/widgets/profile/option_list.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,8 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   int selected = 0;
 
+  final String userName = 'Parth Taggar';
+
   final List<Widget> _optionList = [StatsSubSection(), ListsSubSection()];
 
   void pageChange(index) {
@@ -23,24 +26,55 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // header Buttons
-        Row(),
-        //User Avatar
-        CircleAvatar(),
-        // User Name
-        Text(''),
-        // Some button to view some network or some other things
-        TextButton(onPressed: () {}, child: Text('View Network')),
-        // Edit Profile button
-        ElevatedButton(onPressed: () {}, child: Text('Edit Profile')),
-        OptionList(
-          options: ['Stats', 'Lists', 'Reviews', 'Clubs', 'Posts'],
-          onChanged: pageChange,
-        ),
-        _optionList[selected],
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          //Profile Header
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              CustomButton(
+                onClick: () {},
+                buttonIcon: Icons.file_upload_outlined,
+              ),
+              CustomButton(buttonIcon: Icons.settings, onClick: () {}),
+            ],
+          ),
+          //User Avatar
+          CircleAvatar(radius: 52),
+          // User Name
+          Text(
+            userName,
+            style: TextStyle(fontSize: 32, fontWeight: FontWeight.w500),
+          ),
+          // Some button to view some network or some other things
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Text(
+                  'View Network',
+                  style: TextStyle(color: Color(0xFF0000FF)),
+                ),
+                Icon(
+                  Icons.arrow_forward_ios,
+                  size: 12,
+                  color: Color(0xFF0000FF),
+                ),
+              ],
+            ),
+          ),
+          // Edit Profile button
+          ElevatedButton(onPressed: () {}, child: Text('Edit Profile')),
+          OptionList(
+            options: ['Stats', 'Lists', 'Reviews', 'Clubs', 'Posts'],
+            onChanged: pageChange,
+          ),
+          _optionList[selected],
+        ],
+      ),
     );
   }
 }
