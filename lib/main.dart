@@ -1,5 +1,6 @@
 import 'package:athelia/pages/navBar.dart';
 import 'package:flutter/material.dart';
+import 'package:athelia/screens/home/homepage.dart';
 
 void main() {
   runApp(const MyApp());

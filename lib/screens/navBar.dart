@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:athelia/pages/home/homepage.dart';
+import 'package:athelia/screens/home/homepage.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
