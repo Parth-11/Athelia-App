@@ -24,6 +24,7 @@ class _NavbarState extends State<Navbar> {
       child: Scaffold(
         body: _pages.elementAt(_index),
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _index,
           items: [BottomNavigationBarItem(icon: const Icon(Icons.home))],
           onTap: _pageNavigation,
         ),
