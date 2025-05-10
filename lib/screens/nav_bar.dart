@@ -17,7 +17,7 @@ class _NavbarState extends State<Navbar> {
     });
   }
 
-  static List<Widget> _pages = [HomePage(), HubPage()];
+  static final List<Widget> _pages = [HomePage(), HubPage()];
 
   @override
   Widget build(BuildContext context) {
