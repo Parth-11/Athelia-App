@@ -1,3 +1,5 @@
+import 'package:athelia/screens/profile/lists.dart';
+import 'package:athelia/screens/profile/stats.dart';
 import 'package:athelia/widgets/profile/option_list.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +13,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   int selected = 0;
 
-  final List<Widget> _optionList = [];
+  final List<Widget> _optionList = [StatsSubSection(), ListsSubSection()];
 
   void pageChange(index) {
     setState(() {
@@ -34,17 +36,10 @@ class _ProfilePageState extends State<ProfilePage> {
         // Edit Profile button
         ElevatedButton(onPressed: () {}, child: Text('Edit Profile')),
         OptionList(
-          options: [
-            'Stats',
-            'Lists',
-            'Reviews',
-            'Bibliography',
-            'Clubs',
-            'Posts',
-          ],
+          options: ['Stats', 'Lists', 'Reviews', 'Clubs', 'Posts'],
           onChanged: pageChange,
         ),
-        // _optionList[selected],
+        _optionList[selected],
       ],
     );
   }
