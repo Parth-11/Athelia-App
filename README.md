@@ -2,6 +2,22 @@
 
 A new Flutter project.
 
+## Directory Structure
+
+lib/
+├── models/
+│   ├── home/
+│   └── hub/
+├── screens/
+│   ├── home/
+│   └── hub/
+├── widgets/
+│   ├── home/
+│   └── hub/
+├── nav_bar.dart
+└── main.dart
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
