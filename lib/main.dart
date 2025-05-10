@@ -1,4 +1,4 @@
-import 'package:athelia/screens/navBar.dart';
+import 'package:athelia/screens/nav_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        iconTheme: IconThemeData(size: 40),
       ),
       home: Navbar(),
     );
