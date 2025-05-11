@@ -5,6 +5,7 @@ import 'package:athelia/screens/hub/hub_page.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
+  static const String id = '/';
 
   @override
   State<Navbar> createState() => _NavbarState();

@@ -1,4 +1,5 @@
 import 'package:athelia/screens/profile/lists.dart';
+import 'package:athelia/screens/profile/settings.dart';
 import 'package:athelia/screens/profile/stats.dart';
 import 'package:athelia/widgets/profile/custom_button.dart';
 import 'package:athelia/widgets/profile/option_list.dart';
@@ -40,7 +41,12 @@ class _ProfilePageState extends State<ProfilePage> {
                 buttonIcon: Icons.file_upload_outlined,
               ),
               SizedBox(width: 8),
-              CustomButton(buttonIcon: Icons.settings, onClick: () {}),
+              CustomButton(
+                buttonIcon: Icons.settings,
+                onClick: () {
+                  Navigator.pushNamed(context, SettingsPage.id);
+                },
+              ),
             ],
           ),
           //User Avatar
@@ -54,6 +60,7 @@ class _ProfilePageState extends State<ProfilePage> {
           TextButton(
             onPressed: () {},
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'View Network',

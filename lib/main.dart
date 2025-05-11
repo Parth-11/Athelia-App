@@ -1,4 +1,5 @@
 import 'package:athelia/screens/nav_bar.dart';
+import 'package:athelia/screens/profile/settings.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         iconTheme: IconThemeData(size: 36),
       ),
-      home: Navbar(),
+      routes: {
+        Navbar.id: (context) => const Navbar(),
+        SettingsPage.id: (context) => const SettingsPage(),
+      },
+      initialRoute: Navbar.id,
     );
   }
 }
