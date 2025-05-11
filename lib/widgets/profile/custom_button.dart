@@ -12,6 +12,17 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(onTap: onClick, child: Icon(buttonIcon));
+    return Material(
+      color: Colors.grey.shade300,
+      borderRadius: BorderRadius.circular(40),
+      child: InkWell(
+        onTap: onClick,
+        borderRadius: BorderRadius.circular(64.0),
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Icon(buttonIcon),
+        ),
+      ),
+    );
   }
 }

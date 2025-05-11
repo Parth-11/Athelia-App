@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        iconTheme: IconThemeData(size: 40),
+        iconTheme: IconThemeData(size: 36),
       ),
       home: Navbar(),
     );

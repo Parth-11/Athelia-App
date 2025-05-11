@@ -39,6 +39,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 onClick: () {},
                 buttonIcon: Icons.file_upload_outlined,
               ),
+              SizedBox(width: 8),
               CustomButton(buttonIcon: Icons.settings, onClick: () {}),
             ],
           ),
