@@ -1,3 +1,4 @@
+import 'package:athelia/widgets/profile/change_password.dart';
 import 'package:flutter/material.dart';
 
 class EditProfilePage extends StatefulWidget {
@@ -28,45 +29,46 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Add Custom Field'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: titleController,
-              decoration: const InputDecoration(labelText: 'Field Title'),
+      builder:
+          (context) => AlertDialog(
+            title: const Text('Add Custom Field'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(
+                  controller: titleController,
+                  decoration: const InputDecoration(labelText: 'Field Title'),
+                ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: contentController,
+                  decoration: const InputDecoration(labelText: 'Field Content'),
+                  maxLines: 2,
+                ),
+              ],
             ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: contentController,
-              decoration: const InputDecoration(labelText: 'Field Content'),
-              maxLines: 2,
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Cancel'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  if (titleController.text.isNotEmpty &&
+                      contentController.text.isNotEmpty) {
+                    setState(() {
+                      _customFields.add({
+                        'title': titleController,
+                        'value': contentController,
+                      });
+                    });
+                    Navigator.pop(context);
+                  }
+                },
+                child: const Text('Add'),
+              ),
+            ],
           ),
-          ElevatedButton(
-            onPressed: () {
-              if (titleController.text.isNotEmpty &&
-                  contentController.text.isNotEmpty) {
-                setState(() {
-                  _customFields.add({
-                    'title': titleController,
-                    'value': contentController,
-                  });
-                });
-                Navigator.pop(context);
-              }
-            },
-            child: const Text('Add'),
-          ),
-        ],
-      ),
     );
   }
 
@@ -78,58 +80,67 @@ class _EditProfilePageState extends State<EditProfilePage> {
   void _showChangePasswordDialog() {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Change Password'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: _currentPassword,
-              obscureText: true,
-              decoration: const InputDecoration(labelText: 'Current Password'),
+      builder:
+          (context) => AlertDialog(
+            title: const Text('Change Password'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(
+                  controller: _currentPassword,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Current Password',
+                  ),
+                ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: _newPassword,
+                  obscureText: true,
+                  decoration: const InputDecoration(labelText: 'New Password'),
+                ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: _confirmPassword,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Confirm New Password',
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: _newPassword,
-              obscureText: true,
-              decoration: const InputDecoration(labelText: 'New Password'),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: _confirmPassword,
-              obscureText: true,
-              decoration: const InputDecoration(labelText: 'Confirm New Password'),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Cancel'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  if (_newPassword.text.isNotEmpty &&
+                      _confirmPassword.text.isNotEmpty &&
+                      _newPassword.text == _confirmPassword.text) {
+                    // Handle password change (e.g., update via API or local storage)
+                    // You would typically call a backend API here.
+                    Navigator.pop(context);
+                    // Show a success message or update the UI
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Password changed successfully!'),
+                      ),
+                    );
+                  } else {
+                    // Show an error message
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Passwords do not match or are empty.'),
+                      ),
+                    );
+                  }
+                },
+                child: const Text('Change Password'),
+              ),
+            ],
           ),
-          ElevatedButton(
-            onPressed: () {
-              if (_newPassword.text.isNotEmpty &&
-                  _confirmPassword.text.isNotEmpty &&
-                  _newPassword.text == _confirmPassword.text) {
-                // Handle password change (e.g., update via API or local storage)
-                // You would typically call a backend API here.
-                Navigator.pop(context);
-                // Show a success message or update the UI
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Password changed successfully!')),
-                );
-              } else {
-                // Show an error message
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Passwords do not match or are empty.')),
-                );
-              }
-            },
-            child: const Text('Change Password'),
-          ),
-        ],
-      ),
     );
   }
 
@@ -294,17 +305,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             const SizedBox(height: 12),
 
             // Change Password
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                onPressed: _showChangePasswordDialog, // Handle change password
-                style: OutlinedButton.styleFrom(
-                  side: const BorderSide(color: Colors.teal),
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                ),
-                child: const Text("Change Password"),
-              ),
-            ),
+            ChangePassword(onTap: _showChangePasswordDialog),
           ],
         ),
       ),
