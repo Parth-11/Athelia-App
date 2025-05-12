@@ -32,7 +32,10 @@ class CustomCard extends StatelessWidget {
               ),
             ),
             SizedBox(width: 8),
-            Icon(icon),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Icon(icon),
+            ),
           ],
         ),
       ),
