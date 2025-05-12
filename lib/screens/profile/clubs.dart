@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ListsSubSection extends StatelessWidget {
-  const ListsSubSection({super.key});
+class ClubsSubSection extends StatelessWidget {
+  const ClubsSubSection({super.key});
 
   @override
   Widget build(BuildContext context) {

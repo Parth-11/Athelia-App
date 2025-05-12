@@ -1,5 +1,6 @@
 import 'package:athelia/screens/profile/edit_profile.dart';
-import 'package:athelia/screens/profile/lists.dart';
+import 'package:athelia/screens/profile/clubs.dart';
+import 'package:athelia/screens/profile/posts.dart';
 import 'package:athelia/screens/profile/settings.dart';
 import 'package:athelia/screens/profile/stats.dart';
 import 'package:athelia/widgets/profile/custom_button.dart';
@@ -18,7 +19,11 @@ class _ProfilePageState extends State<ProfilePage> {
 
   final String userName = 'Parth Taggar';
 
-  final List<Widget> _optionList = [StatsSubSection(), ListsSubSection()];
+  final List<Widget> _optionList = [
+    StatsSubSection(),
+    ClubsSubSection(),
+    PostsSubSection(),
+  ];
 
   void pageChange(index) {
     setState(() {
@@ -88,7 +93,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Text('Edit Profile'),
           ),
           OptionList(
-            options: ['Stats', 'Lists', 'Reviews', 'Clubs', 'Posts'],
+            options: ['Stats', 'Clubs', 'Posts'],
             onChanged: pageChange,
           ),
           _optionList[selected],
