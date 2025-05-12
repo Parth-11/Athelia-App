@@ -48,29 +48,25 @@ class StatsSubSection extends StatelessWidget {
           primaryXAxis: CategoryAxis(),
           series: [
             StackedColumnSeries<ChartData, String>(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(32),
-                bottomRight: Radius.circular(32),
-              ),
+              borderRadius: BorderRadius.circular(64),
               dataSource: chartData,
               xValueMapper: (data, _) => data.x,
               yValueMapper: (data, _) => data.y1,
             ),
             StackedColumnSeries<ChartData, String>(
+              borderRadius: BorderRadius.circular(64),
               dataSource: chartData,
               xValueMapper: (data, _) => data.x,
               yValueMapper: (data, _) => data.y2,
             ),
             StackedColumnSeries<ChartData, String>(
+              borderRadius: BorderRadius.circular(64),
               dataSource: chartData,
               xValueMapper: (data, _) => data.x,
               yValueMapper: (data, _) => data.y3,
             ),
             StackedColumnSeries<ChartData, String>(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(32),
-                topRight: Radius.circular(32),
-              ),
+              borderRadius: BorderRadius.circular(64),
               dataSource: chartData,
               xValueMapper: (data, _) => data.x,
               yValueMapper: (data, _) => data.y4,

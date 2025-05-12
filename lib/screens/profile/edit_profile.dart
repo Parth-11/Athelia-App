@@ -1,6 +1,7 @@
 import 'package:athelia/widgets/profile/change_password.dart';
 import 'package:athelia/widgets/profile/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -145,7 +146,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -185,16 +185,29 @@ class _EditProfilePageState extends State<EditProfilePage> {
             CustomTextField(label: 'Last Name', controller: _lastName),
             CustomTextField(label: 'Email', controller: _email),
             CustomTextField(label: 'Phone Number', controller: _phone),
+            IntlPhoneField(
+              decoration: InputDecoration(
+                labelText: 'Phone Number',
+                border: OutlineInputBorder(borderSide: BorderSide()),
+              ),
+              initialCountryCode: 'IN',
+              onChanged: (phone) {
+                print(phone);
+              },
+            ),
             CustomTextField(label: 'Address', controller: _address),
-            CustomTextField(label: 'Goodreads Username/Link', controller: _goodreads),
+            CustomTextField(
+              label: 'Goodreads Username/Link',
+              controller: _goodreads,
+            ),
             CustomTextField(label: 'Hobbies & Interests', controller: _hobbies),
             const SizedBox(height: 10),
 
             // Custom Fields
             for (int i = 0; i < _customFields.length; i++) ...[
-              CustomTextField(clabel: 
-                _customFields[i]['title']!, controller: 
-                _customFields[i]['value']!,
+              CustomTextField(
+                clabel: _customFields[i]['title']!,
+                controller: _customFields[i]['value']!,
                 maxLines: 2,
               ),
             ],
