@@ -49,8 +49,9 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     MemoryNote(
                       noteText:
-                          'Loremm Ipsum ahowfncwnovneonoijoiwfonfksnkfdfjsojfknfaoknfoiwneonwpnpingdfkjaonfaosnwoi',
+                          'Loremm Ipsum \nahowfncwnovneonoijoiwfonfksnkfdfj \nsojfknfaoknfoiwneonwpn \npingdfkjaonfaosnwoi',
                     ),
+                    MemorySticker(),
                   ],
                 ),
               ],
