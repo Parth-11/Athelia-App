@@ -2,6 +2,7 @@ import 'package:athelia/screens/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:athelia/screens/home/home_page.dart';
 import 'package:athelia/screens/hub/hub_page.dart';
+import 'package:athelia/screens/community/community_page.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
@@ -19,7 +20,12 @@ class _NavbarState extends State<Navbar> {
     });
   }
 
-  static final List<Widget> _pages = [HomePage(), HubPage(), ProfilePage()];
+  static final List<Widget> _pages = [
+    HomePage(),
+    HubPage(),
+    ProfilePage(),
+    CommunityPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +36,9 @@ class _NavbarState extends State<Navbar> {
           child: _pages.elementAt(_index),
         ),
         bottomNavigationBar: BottomNavigationBar(
+          unselectedItemColor: Colors.grey[900],
+          selectedItemColor: Colors.grey[900],
+          showUnselectedLabels: true,
           currentIndex: _index,
           items: [
             BottomNavigationBarItem(
@@ -40,6 +49,10 @@ class _NavbarState extends State<Navbar> {
             BottomNavigationBarItem(
               icon: const Icon(Icons.person),
               label: 'Profile',
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.person),
+              label: 'Lounge',
             ),
           ],
           onTap: _pageNavigation,
