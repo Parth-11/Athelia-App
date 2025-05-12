@@ -1,27 +1,37 @@
 import 'package:flutter/material.dart';
 
-class HomePageHeader extends StatefulWidget {
-  const HomePageHeader({super.key});
+class HomePageHeader extends StatelessWidget {
+  const HomePageHeader({
+    super.key,
+    required this.logo,
+    required this.tagLine,
+    this.headerColor,
+  });
 
-  @override
-  State<HomePageHeader> createState() => _HomePageHeaderState();
-}
-
-class _HomePageHeaderState extends State<HomePageHeader> {
-  int index = 0;
+  final Color? headerColor;
+  final IconData logo;
+  final String tagLine;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        // App Logo
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [Icon(Icons.abc_outlined), Text("Some tagline")],
+    return Container(
+      height: 100,
+      decoration: BoxDecoration(color: headerColor),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Row(
+          children: [
+            // App Logo
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Icon(logo), Text(tagLine)],
+            ),
+            Spacer(),
+            CircleAvatar(),
+          ],
         ),
-        Spacer(),
-        CircleAvatar(),
-      ],
+      ),
     );
   }
 }

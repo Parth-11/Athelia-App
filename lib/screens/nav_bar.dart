@@ -26,7 +26,7 @@ class _NavbarState extends State<Navbar> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          padding: EdgeInsets.all(12),
+          // padding: EdgeInsets.all(12),
           child: _pages.elementAt(_index),
         ),
         bottomNavigationBar: BottomNavigationBar(

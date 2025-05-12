@@ -16,8 +16,11 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        HomePageHeader(),
-        Divider(color: Colors.grey.shade500),
+        HomePageHeader(
+          headerColor: const Color(0xFFFFE6D0),
+          logo: Icons.abc,
+          tagLine: 'Some TagLine',
+        ),
         Expanded(
           child: Container(
             decoration: BoxDecoration(color: Colors.amber),
