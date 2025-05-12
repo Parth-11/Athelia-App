@@ -1,4 +1,6 @@
 import 'package:athelia/widgets/home/header.dart';
+import 'package:athelia/widgets/home/hobby_card.dart';
+import 'package:athelia/widgets/home/memory_lane.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,8 +26,34 @@ class _HomePageState extends State<HomePage> {
         Expanded(
           child: Container(
             decoration: BoxDecoration(color: Colors.amber),
-            child: Center(
-              child: Text(index == 0 ? "For You Section" : "Following Section"),
+            child: Column(
+              children: [
+                // Welcome Back
+                Container(decoration: BoxDecoration(), child: Column()),
+                // My Hobby Section
+                Text('My Hobby Shelf'),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      HobbyCard(
+                        title: 'Some Text',
+                        description: 'Sub Text',
+                        cardColor: const Color(0xFFE4E5BE),
+                      ),
+                    ],
+                  ),
+                ),
+                Text('Memory Lane'),
+                Row(
+                  children: [
+                    MemoryNote(
+                      noteText:
+                          'Loremm Ipsum ahowfncwnovneonoijoiwfonfksnkfdfjsojfknfaoknfoiwneonwpnpingdfkjaonfaosnwoi',
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),
