@@ -16,12 +16,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        HomePageHeader(
-          onChanged:
-              (value) => setState(() {
-                index = value;
-              }),
-        ),
+        HomePageHeader(),
         Divider(color: Colors.grey.shade500),
         Expanded(
           child: Container(

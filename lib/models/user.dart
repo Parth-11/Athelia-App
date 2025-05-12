@@ -1,4 +1,4 @@
-import 'package:athelia/models/hobbies.dart';
+import 'package:athelia/models/hobby.dart';
 import 'package:intl_phone_field/phone_number.dart';
 
 class User {
@@ -11,7 +11,7 @@ class User {
   });
 
   final String userName;
-  List<Hobbies> userHobbies;
+  List<Hobby> userHobbies;
   final String email;
   PhoneNumber phoneNumber;
   final String goodReads;
