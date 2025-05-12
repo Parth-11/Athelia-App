@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatefulWidget {
   const CustomTextField({
     super.key,
-    required this.label,
+    this.label = "",
     required this.controller,
+    this.clabel,
     this.maxLines = 1,
   });
 
   final String label;
   final TextEditingController controller;
+  final TextEditingController? clabel;
   final int maxLines;
 
   @override
@@ -19,13 +21,18 @@ class CustomTextField extends StatefulWidget {
 class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
+
+    final String labelText = widget.label.isNotEmpty
+        ? widget.label
+        : (widget.clabel?.text ?? "");
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "${widget.label} *",
+            "$labelText *",
             style: const TextStyle(fontWeight: FontWeight.w500),
           ),
           const SizedBox(height: 6),
