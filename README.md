@@ -3,7 +3,7 @@
 A new Flutter project.
 
 ## Directory Structure
-
+```
 lib/
 ├── models/
 │   ├── home/
@@ -16,7 +16,7 @@ lib/
 │   └── hub/
 ├── nav_bar.dart
 └── main.dart
-
+```
 
 ## Getting Started
 
