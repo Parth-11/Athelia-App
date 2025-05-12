@@ -11,10 +11,10 @@ lib/
 ├── screens/
 │   ├── home/
 │   └── hub/
+|   ├── nav_bar.dart
 ├── widgets/
 │   ├── home/
 │   └── hub/
-├── nav_bar.dart
 └── main.dart
 ```
 
