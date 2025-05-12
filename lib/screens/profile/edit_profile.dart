@@ -145,85 +145,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
     );
   }
 
-  @override
-  void dispose() {
-    _firstName.dispose();
-    _lastName.dispose();
-    _email.dispose();
-    _phone.dispose();
-    _address.dispose();
-    _goodreads.dispose();
-    _hobbies.dispose();
-    _currentPassword.dispose();
-    _newPassword.dispose();
-    _confirmPassword.dispose();
-    for (var field in _customFields) {
-      field['title']?.dispose();
-      field['value']?.dispose();
-    }
-    super.dispose();
-  }
-
-  Widget _buildTextField(
-    String label,
-    TextEditingController controller, {
-    int maxLines = 1,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("$label *", style: const TextStyle(fontWeight: FontWeight.w500)),
-          const SizedBox(height: 6),
-          TextField(
-            controller: controller,
-            maxLines: maxLines,
-            decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
-              isDense: true,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCustomField(
-    TextEditingController labelController,
-    TextEditingController controller, {
-    int maxLines = 1,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Label is now a TextField that is editable
-          TextField(
-            controller: labelController,
-            maxLines: 1, // Keep it single-line or adjust for multi-line
-            style: const TextStyle(fontWeight: FontWeight.w500),
-            decoration: const InputDecoration(
-              border: InputBorder.none, // No border for label
-              isDense: true,
-              hintText: "Label", // Default text or hint
-            ),
-          ),
-          const SizedBox(height: 6),
-          // Actual input field
-          TextField(
-            controller: controller,
-            maxLines: maxLines,
-            decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
-              isDense: true,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -261,19 +182,18 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
             // Main Fields
             CustomTextField(label: 'First Name', controller: _firstName),
-            _buildTextField("Last Name", _lastName),
-            _buildTextField("Email", _email),
-            _buildTextField("Phone Number", _phone),
-            _buildTextField("Address", _address),
-            _buildTextField("Goodreads Username/Link", _goodreads),
-            _buildTextField("Hobbies & Interests", _hobbies),
-
+            CustomTextField(label: 'Last Name', controller: _lastName),
+            CustomTextField(label: 'Email', controller: _email),
+            CustomTextField(label: 'Phone Number', controller: _phone),
+            CustomTextField(label: 'Address', controller: _address),
+            CustomTextField(label: 'Goodreads Username/Link', controller: _goodreads),
+            CustomTextField(label: 'Hobbies & Interests', controller: _hobbies),
             const SizedBox(height: 10),
 
             // Custom Fields
             for (int i = 0; i < _customFields.length; i++) ...[
-              _buildCustomField(
-                _customFields[i]['title']!,
+              CustomTextField(clabel: 
+                _customFields[i]['title']!, controller: 
                 _customFields[i]['value']!,
                 maxLines: 2,
               ),
