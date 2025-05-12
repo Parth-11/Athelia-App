@@ -1,3 +1,4 @@
+import 'package:athelia/screens/profile/edit_profile.dart';
 import 'package:athelia/screens/profile/lists.dart';
 import 'package:athelia/screens/profile/settings.dart';
 import 'package:athelia/screens/profile/stats.dart';
@@ -75,7 +76,17 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
           // Edit Profile button
-          ElevatedButton(onPressed: () {}, child: Text('Edit Profile')),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const EditProfilePage(),
+                ),
+              );
+            },
+            child: Text('Edit Profile'),
+          ),
           OptionList(
             options: ['Stats', 'Lists', 'Reviews', 'Clubs', 'Posts'],
             onChanged: pageChange,
