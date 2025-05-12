@@ -10,6 +10,7 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
+
   final TextEditingController _firstName = TextEditingController();
   final TextEditingController _lastName = TextEditingController();
   final TextEditingController _email = TextEditingController();
@@ -74,8 +75,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
   }
 
   void _saveProfile() {
-    // Collect and save data here
-    Navigator.pop(context); // Or show a confirmation
+    Navigator.pop(context);
   }
 
   void _showChangePasswordDialog() {
@@ -120,8 +120,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   if (_newPassword.text.isNotEmpty &&
                       _confirmPassword.text.isNotEmpty &&
                       _newPassword.text == _confirmPassword.text) {
-                    // Handle password change (e.g., update via API or local storage)
-                    // You would typically call a backend API here.
+                    // Handle password change
                     Navigator.pop(context);
                     // Show a success message or update the UI
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -144,7 +143,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
           ),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
