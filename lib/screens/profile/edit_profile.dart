@@ -1,4 +1,5 @@
 import 'package:athelia/widgets/profile/change_password.dart';
+import 'package:athelia/widgets/profile/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class EditProfilePage extends StatefulWidget {
@@ -259,7 +260,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             const SizedBox(height: 30),
 
             // Main Fields
-            _buildTextField("First Name", _firstName),
+            CustomTextField(label: 'First Name', controller: _firstName),
             _buildTextField("Last Name", _lastName),
             _buildTextField("Email", _email),
             _buildTextField("Phone Number", _phone),
