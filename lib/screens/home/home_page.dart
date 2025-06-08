@@ -1,3 +1,4 @@
+import 'package:athelia/widgets/home/entry_button.dart';
 import 'package:athelia/widgets/home/header.dart';
 import 'package:athelia/widgets/home/hobby_card.dart';
 import 'package:athelia/widgets/home/memory_lane.dart';
@@ -29,7 +30,34 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 // Welcome Back
-                Container(decoration: BoxDecoration(), child: Column()),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(width: 3, color: Color(0xFF40003C)),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Welcome User'),
+                        Row(
+                          children: [
+                            Text("Today's Vibe:"),
+                            Text("Chill and Fun"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text("Active Hobbies"),
+                            Text("Singing,Binge Watching"),
+                          ],
+                        ),
+                        EntryButton(),
+                      ],
+                    ),
+                  ),
+                ),
                 // My Hobby Section
                 Text('My Hobby Shelf'),
                 SingleChildScrollView(
