@@ -39,8 +39,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 4.0,
-                        vertical: 8.0,
+                        horizontal: 2.0,
+                        vertical: 4.0,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
