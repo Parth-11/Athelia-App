@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
         ),
         Expanded(
           child: Container(
-            decoration: BoxDecoration(color: Colors.amber),
+            decoration: BoxDecoration(color: Color(0xFFFFE6D0)),
             child: Column(
               children: [
                 // Welcome Back
@@ -35,14 +35,12 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 3, color: Color(0xFF40003C)),
+                      border: Border.all(width: 4, color: Color(0xFF40003C)),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 8,
-                        top: 8,
-                        bottom: 8,
-                        right: 8,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 4.0,
+                        vertical: 8.0,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +97,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 // My Hobby Section
-                Text('My Hobby Shelf'),
+                Text(
+                  'My Hobby Shelf',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -112,7 +113,10 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Text('Memory Lane'),
+                Text(
+                  'Memory Lane',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                ),
                 Row(
                   children: [
                     MemoryNote(
@@ -121,6 +125,22 @@ class _HomePageState extends State<HomePage> {
                     ),
                     MemorySticker(),
                   ],
+                ),
+                Text(
+                  'My Hobby Shelf',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      HobbyCard(
+                        title: 'Some Text',
+                        description: 'Sub Text',
+                        cardColor: const Color(0xFFE4E5BE),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
