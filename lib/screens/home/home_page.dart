@@ -1,5 +1,5 @@
 import 'package:athelia/widgets/home/entry_button.dart';
-import 'package:athelia/widgets/home/header.dart';
+// import 'package:athelia/widgets/home/header.dart';
 import 'package:athelia/widgets/home/hobby_card.dart';
 import 'package:athelia/widgets/home/memory_lane.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +19,16 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        HomePageHeader(
-          headerColor: const Color(0xFFFFE6D0),
-          logo: Icons.abc,
-          tagLine: 'Some TagLine',
-        ),
         Expanded(
           child: Container(
-            decoration: BoxDecoration(color: Color(0xFFFFE6D0)),
+            decoration: BoxDecoration(
+              // color: Color(0xFFFFE6D0),
+              color: Color(0xFFFFF3E5),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16),
+                topRight: Radius.circular(16),
+              ),
+            ),
             child: Column(
               children: [
                 // Welcome Back
