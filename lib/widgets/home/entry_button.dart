@@ -18,7 +18,7 @@ class EntryButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(CupertinoIcons.pen, color: Colors.black, size: 20),
-            Text("Today's entry"),
+            Text("Today's entry", style: TextStyle(fontFamily: 'Itim')),
             VerticalDivider(thickness: 20, color: Colors.black),
             Icon((Icons.arrow_forward_ios_outlined)),
           ],

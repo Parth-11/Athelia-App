@@ -39,8 +39,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 4.0,
-                        vertical: 8.0,
+                        horizontal: 2.0,
+                        vertical: 4.0,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,6 +50,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
+                              fontFamily: 'Itim',
                             ),
                           ),
                           Row(
@@ -60,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
+                                  fontFamily: "Itim",
                                 ),
                               ),
                               Text(
@@ -67,6 +69,7 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
+                                  fontFamily: 'Itim',
                                 ),
                               ),
                             ],
@@ -79,6 +82,7 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
+                                  fontFamily: 'Itim',
                                 ),
                               ),
                               Text(
@@ -86,6 +90,7 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
+                                  fontFamily: 'Itim',
                                 ),
                               ),
                             ],
