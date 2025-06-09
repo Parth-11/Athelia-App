@@ -16,21 +16,22 @@ class HomePageHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100,
+      padding: EdgeInsets.all(8),
       decoration: BoxDecoration(color: headerColor),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Row(
-          children: [
-            // App Logo
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Icon(logo), Text(tagLine)],
-            ),
-            Spacer(),
-            CircleAvatar(),
-          ],
-        ),
+      child: Row(
+        children: [
+          // App Logo
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(logo, size: 50),
+              Text(tagLine, style: TextStyle(fontSize: 20)),
+            ],
+          ),
+          Spacer(),
+          CircleAvatar(radius: 32),
+        ],
       ),
     );
   }
