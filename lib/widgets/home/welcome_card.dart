@@ -29,12 +29,14 @@ class WelcomeCard extends StatelessWidget {
                   fontFamily: "Itim",
                 ),
               ),
-              Text(
-                "Chill and Fun",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'Itim',
+              Flexible(
+                child: Text(
+                  "Chill and Fun",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Itim',
+                  ),
                 ),
               ),
             ],
@@ -50,12 +52,14 @@ class WelcomeCard extends StatelessWidget {
                   fontFamily: 'Itim',
                 ),
               ),
-              Text(
-                "Singing,Binge Watching",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'Itim',
+              Flexible(
+                child: Text(
+                  "Singing,Binge Watching",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Itim',
+                  ),
                 ),
               ),
             ],
