@@ -33,71 +33,74 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //Profile Header
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              CustomButton(
-                onClick: () {},
-                buttonIcon: Icons.file_upload_outlined,
-              ),
-              SizedBox(width: 8),
-              CustomButton(
-                buttonIcon: Icons.settings,
-                onClick: () {
-                  Navigator.pushNamed(context, SettingsPage.id);
-                },
-              ),
-            ],
-          ),
-          //User Avatar
-          CircleAvatar(radius: 52),
-          // User Name
-          Text(
-            userName,
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.w500),
-          ),
-          // Some button to view some network or some other things
-          TextButton(
-            onPressed: () {},
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
+    return Padding(
+      padding: EdgeInsetsGeometry.all(16),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //Profile Header
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  'View Network',
-                  style: TextStyle(color: Color(0xFF0000FF)),
+                CustomButton(
+                  onClick: () {},
+                  buttonIcon: Icons.file_upload_outlined,
                 ),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 12,
-                  color: Color(0xFF0000FF),
+                SizedBox(width: 8),
+                CustomButton(
+                  buttonIcon: Icons.settings,
+                  onClick: () {
+                    Navigator.pushNamed(context, SettingsPage.id);
+                  },
                 ),
               ],
             ),
-          ),
-          // Edit Profile button
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const EditProfilePage(),
-                ),
-              );
-            },
-            child: Text('Edit Profile'),
-          ),
-          OptionList(
-            options: ['Stats', 'Clubs', 'Posts'],
-            onChanged: pageChange,
-          ),
-          _optionList[selected],
-        ],
+            //User Avatar
+            CircleAvatar(radius: 52),
+            // User Name
+            Text(
+              userName,
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.w500),
+            ),
+            // Some button to view some network or some other things
+            TextButton(
+              onPressed: () {},
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'View Network',
+                    style: TextStyle(color: Color(0xFF0000FF)),
+                  ),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    size: 12,
+                    color: Color(0xFF0000FF),
+                  ),
+                ],
+              ),
+            ),
+            // Edit Profile button
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const EditProfilePage(),
+                  ),
+                );
+              },
+              child: Text('Edit Profile'),
+            ),
+            OptionList(
+              options: ['Stats', 'Clubs', 'Posts'],
+              onChanged: pageChange,
+            ),
+            _optionList[selected],
+          ],
+        ),
       ),
     );
   }
