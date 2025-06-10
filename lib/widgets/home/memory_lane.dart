@@ -16,8 +16,7 @@ class MemoryNote extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      constraints: BoxConstraints(minHeight: 120),
+      constraints: BoxConstraints(minHeight: 120, minWidth: 150, maxWidth: 200),
       // height: 120,
       decoration: BoxDecoration(
         color: noteColor,
