@@ -34,7 +34,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsGeometry.all(16),
+      padding: EdgeInsets.all(16),
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

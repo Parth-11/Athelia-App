@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 //Memory lane
                 Padding(
-                  padding: EdgeInsetsGeometry.symmetric(
+                  padding: EdgeInsets.symmetric(
                     horizontal: 16,
                     vertical: 8,
                   ),
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 // My hobby shelf
                 Padding(
-                  padding: EdgeInsetsGeometry.symmetric(
+                  padding: EdgeInsets.symmetric(
                     horizontal: 16,
                     vertical: 8,
                   ),
