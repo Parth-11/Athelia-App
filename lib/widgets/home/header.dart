@@ -30,7 +30,11 @@ class HomePageHeader extends StatelessWidget {
             ],
           ),
           Spacer(),
-          CircleAvatar(radius: 32),
+          CircleAvatar(
+            radius: 32,
+            backgroundColor: Color(0xFFD6A76E),
+            child: CircleAvatar(radius: 28),
+          ),
         ],
       ),
     );

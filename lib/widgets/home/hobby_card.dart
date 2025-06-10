@@ -19,7 +19,7 @@ class HobbyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxHeight: 100),
+      constraints: BoxConstraints(maxHeight: 100, minHeight: 40),
       child: Card(
         color: cardColor,
         child: Padding(

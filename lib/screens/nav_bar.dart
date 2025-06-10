@@ -1,4 +1,5 @@
 import 'package:athelia/screens/profile/profile_page.dart';
+import 'package:athelia/widgets/community/community_appbar.dart';
 import 'package:athelia/widgets/home/header.dart';
 import 'package:flutter/material.dart';
 import 'package:athelia/screens/home/home_page.dart';
@@ -28,18 +29,31 @@ class _NavbarState extends State<Navbar> {
     CommunityPage(),
   ];
 
+  static final List<PreferredSizeWidget?> _appBar = [
+    PreferredSize(
+      preferredSize: const Size.fromHeight(100),
+      child: HomePageHeader(
+        logo: Icons.abc,
+        tagLine: "Some Tagline",
+        headerColor: Color(0xFFFFE6D0),
+      ),
+    ),
+    PreferredSize(
+      preferredSize: const Size.fromHeight(100),
+      child: HomePageHeader(logo: Icons.abc_outlined, tagLine: "Hub"),
+    ),
+    null,
+    PreferredSize(
+      preferredSize: const Size.fromHeight(100),
+      child: CommuntiyAppBar(),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(100),
-          child: HomePageHeader(
-            logo: Icons.abc,
-            tagLine: "Some Tagline",
-            headerColor: Color(0xFFFFE6D0),
-          ),
-        ),
+        appBar: _appBar.elementAt(_index),
         body: Container(
           // padding: EdgeInsets.all(12),
           color: Color(0xFFFFE6D0),

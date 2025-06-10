@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class MemoryNote extends StatelessWidget {
   const MemoryNote({
@@ -16,6 +17,7 @@ class MemoryNote extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 200,
+      constraints: BoxConstraints(minHeight: 120),
       // height: 120,
       decoration: BoxDecoration(
         color: noteColor,
@@ -36,38 +38,30 @@ class MemorySticker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          height: 15,
-          width: 10,
-          decoration: BoxDecoration(color: const Color(0xFFD9D9D9)),
-        ),
-        Container(
-          height: 100,
-          width: 100,
-          decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(
-            children: [
-              Container(
-                height: 30,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF0D199),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(12),
-                    topRight: Radius.circular(12),
-                  ),
-                ),
+    return Transform.rotate(
+      angle: 10 / (180 / pi),
+      child: Container(
+        margin: EdgeInsets.only(left: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: 15,
+              width: 10,
+              decoration: BoxDecoration(color: const Color(0xFFD9D9D9)),
+            ),
+            Container(
+              constraints: BoxConstraints(minHeight: 100, minWidth: 100),
+              decoration: BoxDecoration(
+                color: Color(0xFFFFE3C7),
+                borderRadius: BorderRadius.circular(18),
+                border: Border.all(color: Color(0xFFD6A76E), width: 4),
               ),
-              Text(''),
-            ],
-          ),
+              child: Text(''),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

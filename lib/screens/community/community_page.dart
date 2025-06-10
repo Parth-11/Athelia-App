@@ -54,21 +54,6 @@ class _CommunityPageState extends State<CommunityPage> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Container(
-            padding: EdgeInsets.only(top: 14),
-            color: const Color(0xFFFFE7D1),
-            height: 70,
-            width: double.infinity,
-            child: const Text(
-              "My Cozy Corner",
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF7A4B2A),
-              ),
-            ),
-          ),
-
           Divider(color: Colors.brown[500], thickness: 3),
           const Text(
             "Cozy Lounge: Hobby Rooms",
