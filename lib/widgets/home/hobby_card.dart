@@ -19,17 +19,19 @@ class HobbyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxHeight: 100),
+      constraints: BoxConstraints(maxHeight: 100, minHeight: 40),
       child: Card(
         color: cardColor,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(decoration: BoxDecoration(), child: Text(title)),
-              Spacer(),
+              Container(
+                padding: EdgeInsets.only(bottom: 8),
+                child: Text(title),
+              ),
               Text(description),
             ],
           ),
