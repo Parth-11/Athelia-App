@@ -23,15 +23,13 @@ class HobbyCard extends StatelessWidget {
       child: Card(
         color: cardColor,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                padding: EdgeInsets.only(bottom: 8),
-                child: Text(title),
-              ),
+              Container(decoration: BoxDecoration(), child: Text(title)),
+              Spacer(),
               Text(description),
             ],
           ),
