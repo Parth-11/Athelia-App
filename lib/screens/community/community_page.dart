@@ -141,9 +141,3 @@ class _CommunityPageState extends State<CommunityPage> {
     );
   }
 }
-
-// 
-// 12.5 + 8 + 2.5 + 9.5 
-// 20.5
-// 12
-// 32.5

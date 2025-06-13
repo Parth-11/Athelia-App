@@ -54,10 +54,10 @@ class _RoomPageState extends State<RoomPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: const Color(0xFFFBE9DD),
-      child: SafeArea(
-        child: Padding(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xFFFBE9DD),
+        body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,9 +110,10 @@ class _RoomPageState extends State<RoomPage> {
                   horizontal: 12,
                   vertical: 10,
                 ),
+                height: 50,
                 decoration: BoxDecoration(
                   color: const Color(0xFFF3D5B5),
-                  borderRadius: BorderRadius.circular(24),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
                   children: [
@@ -121,7 +122,10 @@ class _RoomPageState extends State<RoomPage> {
                         controller: _controller,
                         decoration: const InputDecoration(
                           hintText: 'Write a message....',
-                          hintStyle: TextStyle(color: Colors.brown),
+                          hintStyle: TextStyle(
+                            color: Colors.brown,
+                            fontSize: 16,
+                          ),
                           border: InputBorder.none,
                         ),
                         onSubmitted: _addMessage,
@@ -129,7 +133,11 @@ class _RoomPageState extends State<RoomPage> {
                     ),
                     GestureDetector(
                       onTap: () => _addMessage(_controller.text),
-                      child: const Icon(Icons.send, color: Colors.brown),
+                      child: const Icon(
+                        Icons.send,
+                        color: Colors.brown,
+                        size: 25,
+                      ),
                     ),
                   ],
                 ),
