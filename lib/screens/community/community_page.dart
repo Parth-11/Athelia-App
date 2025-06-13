@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:athelia/widgets/community/featured_message_card.dart';
 import 'package:athelia/widgets/community/room_tile.dart';
+import 'package:athelia/screens/community/room_page.dart';
 
 class CommunityPage extends StatefulWidget {
   const CommunityPage({super.key});
@@ -14,40 +15,42 @@ class _CommunityPageState extends State<CommunityPage> {
 
   final List<Map<String, dynamic>> rooms = [
     {
-      'id': 'room-name',
-      'title': '#room-title',
-      'subtitle': 'Room Subtitle -- Some Catchy Phrase!',
-      'icon': '📖',
-      'postCount': 5,
+      'id': 'painting-nook',
+      'name': '#painting-nook',
+      'prompt': 'Show us your brush strokes! What have you been working on?',
+      'title': '#painting-nook',
+      'subtitle': 'Room for painters & sketchers',
+      'icon': '🎨',
+      'postCount': 12,
     },
     {
-      'id': 'room-name',
-      'title': '#room-title',
-      'subtitle': 'Room Subtitle -- Some Catchy Phrase!',
+      'id': 'book-club',
+      'name': '#book-club',
+      'prompt': 'What are you reading today? 📚',
+      'title': '#book-club',
+      'subtitle': 'Share what you’re reading!',
       'icon': '📖',
-      'postCount': 5,
+      'postCount': 8,
     },
     {
-      'id': 'room-name',
-      'title': '#room-title',
-      'subtitle': 'Room Subtitle -- Some Catchy Phrase!',
-      'icon': '📖',
-      'postCount': 5,
+      'id': 'plant-lovers',
+      'name': '#plant-lovers',
+      'prompt': 'How are your plant babies doing today?',
+      'title': '#plant-lovers',
+      'subtitle': 'All about plants 🌿',
+      'icon': '🪴',
+      'postCount': 7,
     },
     {
-      'id': 'room-name',
-      'title': '#room-title',
-      'subtitle': 'Room Subtitle -- Some Catchy Phrase!',
-      'icon': '📖',
-      'postCount': 5,
+      'id': 'cozy-crafts',
+      'name': '#cozy-crafts',
+      'prompt': 'What cozy craft are you making today?',
+      'title': '#cozy-crafts',
+      'subtitle': 'Knitting, embroidery & more',
+      'icon': '🧶',
+      'postCount': 10,
     },
   ];
-
-  void onItemTap(int index) {
-    setState(() {
-      sindex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +79,16 @@ class _CommunityPageState extends State<CommunityPage> {
                             (room) => RoomTile(
                               room: room,
                               onTap: () {
-                                // room enter
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder:
+                                        (_) => RoomPage(
+                                          roomName: room['name'],
+                                          prompt: room['prompt'],
+                                        ),
+                                  ),
+                                );
                               },
                             ),
                           )
